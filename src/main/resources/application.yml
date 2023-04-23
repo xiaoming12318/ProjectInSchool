@@ -1,0 +1,34 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/project?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+      username: root
+      password: 975409698ljj
+
+  redis:
+    host: 192.168.26.131
+    database: 0
+    port: 6379
+    jedis:
+      pool:
+        #最大活跃连接数
+        max-active: 8
+
+    connect-timeout: 10000
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    #将数据库中的字段和表名的下划线做处理，处理为驼峰命名法
+    map-underscore-to-camel-case: true
+  global-config:
+    db-config:
+      id-type: assign_id
+
+
+
+
+
