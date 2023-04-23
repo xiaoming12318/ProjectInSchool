@@ -92,7 +92,7 @@ public class UserController {
         queryWrapper.eq(User::getUsername, user.getUsername());
         User userOne = userService.getOne(queryWrapper);
         log.info("得到的数据：{}", userOne);
-        //没有查到数据.
+        //没有查到数据
         if (userOne == null) {
             return R.error("查无此用户请先注册");
         }
