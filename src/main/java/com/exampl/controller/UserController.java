@@ -57,7 +57,7 @@ public class UserController {
         String password = user.getPassword();
         //因为数据库有这个状态，但是用户编辑不到，所以默认就给他是1
         if (user.getStatus() == null) user.setStatus(1);
-        //设置md5加密
+        //设置md5加密。
         password = DigestUtils.md5DigestAsHex(password.getBytes());
         user.setPassword(password);
 
