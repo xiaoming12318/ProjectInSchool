@@ -40,7 +40,7 @@ public class SendSmsController {
             return R.error("中断异常");
         }
         log.info(code.toString());
-        //将短信存入redis设置60秒过期时间
+        //将短信存入redis设置60秒过期时间.
         jedisPool.getResource().setex(RedisConstantMessage.SENDTYPE_REGISTER+phoneNumber,60,code.toString());
 
         return R.success("发送验证码成功");
